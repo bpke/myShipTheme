@@ -1,0 +1,86 @@
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+
+@import url(bootstrap.min.css);
+@import url(bootstrap-glyphicons.css);
+
+body {
+	background-color: #fafafa;
+}
+
+img {
+	vertical-align: none;
+}
+
+.navbar {
+	position: inherit;
+}
+
+.navbar-default {
+	background-color: #fff;	
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #074c87;
+	font-weight: bold;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+	font-weight: bold;
+}
+
+.lfr-actions .lfr-trigger, .lfr-actions .lfr-trigger strong {
+	background-image: none;
+	border-left: 0.1em dotted black;
+}
+
+#banner {
+	background: transparent url(../images/banner_bg.jpg) repeat-x 20% 0;
+	min-width: 100%;
+	top: -1px;
+	padding-top: 8px;
+	min-height: 100px
+}
+
+#banner .logo {
+	color: #fff;
+	display: block;
+	padding: 0;
+	padding-left: 0px;
+	float: left;
+}
+
+.site-name {
+	float: left;
+	margin-top: 20px;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+	color: #fff;
+	background-color: #074c87;
+}
+
+#banner .logo a {
+	background: url(../images/company_logo.png) no-repeat;
+	display: block;
+	font-size: 0;
+	height: 70px;
+	text-indent: -9999em;
+	width: 250px;
+}
+
+.portlet-draggable .portlet-topper {
+	cursor: move;
+}
+
+.alert {
+	padding: 2px;
+}
+
+.alert-info {
+	background-color: #c6d3e0;
+	color: #000;	
+}
+
+h5 {
+	font-weight: bold;
+}
