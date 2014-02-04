@@ -10,15 +10,6 @@
   	
   	<div class="collapse navbar-collapse navbar-ex1-collapse">
   		<ul class="nav navbar-nav">
-  			<li><a role="button" data-toggle="dropdown" href="#" data-target="#">Communities >></a>
-		  		<ul class="dropdown-menu" role="menu">
-					#foreach ($myPlace IN $myPlaces)
-						#if ($myPlace.isRegularSite())
-							<li><a href="/web$myPlace.getFriendlyURL()">$myPlace.getName()</a></li>
-						#end
-					#end
-				</ul>
-			</li>
   			#foreach ($nav_item in $nav_items)
   				#if ($nav_item.isSelect() && $nav_item.hasChildren())
   					<li class="active dropdown">
