@@ -1,3 +1,4 @@
+#set ($myPlaces = $user.getMySites())
 <div class="navbar navbar-default" role="navigation" id="navigation">
 	<div class="navbar-header">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -9,11 +10,20 @@
   	
   	<div class="collapse navbar-collapse navbar-ex1-collapse">
   		<ul class="nav navbar-nav">
+  			<li><a role="button" data-toggle="dropdown" href="#" data-target="#">Communities >></a>
+		  		<ul class="dropdown-menu" role="menu">
+					#foreach ($myPlace IN $myPlaces)
+						#if ($myPlace.isRegularSite())
+							<li><a href="/web$myPlace.getFriendlyURL()">$myPlace.getName()</a></li>
+						#end
+					#end
+				</ul>
+			</li>
   			#foreach ($nav_item in $nav_items)
   				#if ($nav_item.isSelect() && $nav_item.hasChildren())
   					<li class="active dropdown">
   				#elseif ($nav_item.isSelect())
-  					<li class="active"
+  					<li class="active">
   				#else
   					<li>
   				#end
@@ -40,7 +50,7 @@
   				
   			#end
   			<li>
-  				<a href="http://www.ship.edu/myship/feedback" target="_blank">myShip Feedback</a>
+  				<a href="http://www.ship.edu/myship/feedback?o=2" target="_blank">myShip Feedback</a>
   			</li>
   			<li>
   				<a href="/c/portal/logout">Logout</a>

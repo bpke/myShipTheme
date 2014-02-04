@@ -1,10 +1,131 @@
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
 
 @import url(bootstrap.min.css);
-@import url(bootstrap-glyphicons.css);
+
+
+/* --- action menu --- */
+
+.action-menu-wrapper { /* Fix for IE z-index problem */
+    position:   relative;
+    top: -4px;
+    left: 0;
+    z-index:    1;
+    padding-bottom: 24px;
+    margin-top: 10px;
+}
+
+.action-menu-wrapper ul {
+    position:   absolute;
+    background-color: #f5f5f5;
+    width:     100%;
+}
+
+.action-menu-wrapper li {
+    float: right;
+}
+
+.portlet-action-menu, .portlet-action-menu * {
+    margin:         0;
+    padding:        0;
+    list-style:     none;
+}
+
+.portlet-action-menu {
+    float:          left;
+    margin-bottom:  1em;
+    line-height:    1.0;
+}
+
+.portlet-action-menu ul {
+    position:       absolute;
+    top:            -999em;
+    width:          12.5em; /* left offset of submenus need to match (see below) */
+}
+
+.portlet-action-menu ul li {
+    width:          112%;
+    float:          left;
+}
+
+.portlet-action-menu li {
+    float:          right;
+    position:       relative;
+}
+
+.portlet-action-menu li li {
+    background:     #a7a7a7;
+    border:         1px solid #FFF;
+    border-bottom: none;
+}
+
+.portlet-action-menu li li li {
+    background:     #a7a7a7;
+    right:          1.7em;
+    border:         1px solid #FFF;
+    border-bottom: none;
+}
+
+.portlet-action-menu li:hover {
+    visibility:     inherit; /* fixes IE7 'sticky bug' */
+}
+
+.portlet-action-menu a {
+    display:        block;
+    position:       relative;
+    padding:        .75em 1em;
+    text-decoration:none;
+    font-weight:    bold;
+    white-space:    nowrap;
+    cursor:         pointer;
+}
+
+.portlet-action-menu li ul {
+    right:          1.6em;
+}
+
+.portlet-action-menu li:hover ul,
+.portlet-action-menu li.sfHover ul {
+    right:          1.6em;
+    top:            2.4em; /* match top ul list item height */
+    z-index:        99;
+}
+
+ul.portlet-action-menu li:hover li ul,
+ul.portlet-action-menu li.sfHover li ul {
+    top:            -999em;
+}
+
+ul.portlet-action-menu li li:hover ul,
+ul.portlet-action-menu li li.sfHover ul {
+    left:           -12.5em; /* match ul width */
+    top:            -1px;
+}
+
+ul.portlet-action-menu li li:hover li ul,
+ul.portlet-action-menu li li.sfHover li ul {
+    top:            -999em;
+}
+
+ul.portlet-action-menu li li li:hover ul,
+ul.portlet-action-menu li li li.sfHover ul {
+    left:           -12.5em; /* match ul width */
+    top:            0;
+}
+
+.portlet-action-menu li:hover, .portlet-action-menu li.sfHover,
+.portlet-action-menu a:focus, .portlet-action-menu a:hover, .portlet-action-menu a:active {
+    background:     #C0C0C0;
+    outline:        0;
+    color:          #0066CC;
+}
+
+/* --- end action menu --- */
+
+
 
 body {
 	background-color: #fafafa;
+	font-size: 13px;
 }
 
 img {
@@ -83,4 +204,30 @@ img {
 
 h5 {
 	font-weight: bold;
+}
+
+.portlet-msg-info, .lfr-message-info {
+	background-image: none;	
+}
+
+.portlet-msg-error, .lfr-message-error {
+	background-image: none;
+}
+
+.accordion-header-middle {
+	padding-bottom: 25px;
+}
+
+h4 {
+	font-size: 13px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
+
+.portlet-body {
+	margin: 8px;
+}
+
+.dropdown-backdrop {
+	position: static;
 }
