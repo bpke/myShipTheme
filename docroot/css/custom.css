@@ -229,5 +229,15 @@ h5 {
 }
 
 .dropdown-backdrop {
-	position: static;
+	position: relative;
+}
+
+.navbar {
+	position: relative;
+	z-index: 10;
+}
+
+.portlet-dockbar {
+	position: relative;
+	z-index: 11;
 }
